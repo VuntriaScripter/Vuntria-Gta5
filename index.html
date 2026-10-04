@@ -4,339 +4,345 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vuntria GTA | Tarifs GTA 5</title>
-
+<title>Vuntria | Guide GTA Online</title>
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --bg:#050b14;
+  --panel:#0c192a;
+  --border:#203b59;
+  --blue:#078bff;
+  --purple:#884cff;
+  --text:#f3f6ff;
+  --muted:#b8c6d9;
 }
-
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #080a10;
-  color: #fff;
-  min-height: 100vh;
-  padding: 25px 15px;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:radial-gradient(ellipse at top,#142c49,#050b14 70%);
+  color:var(--text);
 }
-
 header {
-  text-align: center;
-  padding: 25px 10px 35px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#050b14f5;
+  border-bottom:1px solid var(--border);
+  padding:16px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:15px;
 }
-
-.logo {
-  font-size: 36px;
-  font-weight: 900;
-  letter-spacing: 2px;
+.logo { font-size:25px;font-weight:900; }
+.logo span { color:#ff3049; }
+nav { display:flex;flex-wrap:wrap;gap:8px; }
+nav a {
+  color:white;text-decoration:none;padding:10px;
+  border-radius:8px;font-weight:bold;
 }
-
-.logo span {
-  color: #9b6bff;
-}
-
-.subtitle {
-  color: #a9afbd;
-  margin-top: 8px;
-  font-size: 14px;
-}
-
-.badge {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 7px 14px;
-  background: #1b1630;
-  border: 1px solid #6945bb;
-  border-radius: 30px;
-  color: #c9b5ff;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.container {
-  max-width: 1050px;
-  margin: auto;
-}
-
-.intro {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.intro h1 {
-  font-size: clamp(26px, 5vw, 42px);
-  margin-bottom: 10px;
-}
-
-.intro h1 span {
-  color: #a77bff;
-}
-
-.intro p {
-  color: #a9afbd;
-  font-size: 14px;
-}
-
-.tarifs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.card {
-  background: linear-gradient(145deg, #171b27, #10121a);
-  border: 1px solid #303647;
-  border-radius: 15px;
-  padding: 22px 18px;
-  text-align: center;
-  transition: transform .2s, border-color .2s;
-  position: relative;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #9564ff;
-}
-
-.card.popular {
-  border-color: #9463ff;
-  box-shadow: 0 0 20px #8b5cf620;
-}
-
-.card .icon {
-  font-size: 30px;
-  margin-bottom: 12px;
-}
-
-.amount {
-  font-size: 22px;
-  font-weight: 900;
-  margin-bottom: 8px;
-}
-
-.price {
-  color: #a98aff;
-  font-size: 32px;
-  font-weight: 900;
-  margin: 12px 0;
-}
-
-.price small {
-  font-size: 14px;
-  color: #c9c3d9;
-}
-
-.description {
-  color: #9da6b6;
-  font-size: 12px;
-  margin-bottom: 17px;
-}
-
-.order-button {
-  display: block;
-  width: 100%;
-  padding: 12px 10px;
-  background: #8051e8;
-  color: white;
-  border: none;
-  border-radius: 9px;
-  font-weight: 800;
-  font-size: 13px;
-  text-decoration: none;
-  transition: background .2s;
-}
-
-.order-button:hover {
-  background: #9a70ff;
-}
-
+nav a:hover { background:#173252; }
 .discord {
-  margin: 35px auto 0;
-  padding: 30px 20px;
-  text-align: center;
-  background: linear-gradient(120deg, #211840, #111722);
-  border: 1px solid #59418b;
-  border-radius: 16px;
+  background:#5865f2;color:white;
+  text-decoration:none;padding:12px 16px;
+  border-radius:9px;font-weight:bold;
 }
-
-.discord h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
+.search {
+  padding:12px 15px;border-radius:25px;
+  background:#091321;color:white;
+  border:1px solid var(--border);
+  width:220px;
 }
-
-.discord p {
-  color: #b5bdcc;
-  font-size: 14px;
-  margin-bottom: 18px;
+.hero {
+  padding:70px 7%;
+  min-height:300px;
+  background:linear-gradient(90deg,#06101ef5,#06101e80),
+  url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=80') center/cover;
+  border-bottom:1px solid var(--border);
 }
-
-.discord a {
-  display: inline-block;
-  background: #5865f2;
-  color: white;
-  text-decoration: none;
-  padding: 13px 22px;
-  border-radius: 9px;
-  font-weight: bold;
+.hero h1 { font-size:clamp(38px,6vw,68px);margin:15px 0; }
+.hero h1 span { color:var(--blue); }
+.hero p { color:var(--muted);font-size:18px;line-height:1.7;max-width:650px; }
+.badge {
+  display:inline-block;background:#102746;
+  border:1px solid #1b5a91;color:#9bd1ff;
+  border-radius:30px;padding:8px 13px;font-size:12px;
 }
-
-.discord a:hover {
-  background: #4752c4;
+.container { max-width:1400px;margin:30px auto;padding:0 20px; }
+.columns { display:grid;grid-template-columns:1.1fr 1fr;gap:20px; }
+.panel {
+  background:linear-gradient(160deg,#0c192a,#07111e);
+  border:1px solid var(--border);
+  border-radius:15px;padding:22px;
 }
-
-.info {
-  margin: 25px 0;
-  text-align: center;
-  color: #7f899a;
-  font-size: 12px;
-  line-height: 1.7;
+h2 { margin:0;font-size:27px; }
+.subtitle { color:var(--blue);font-weight:bold;margin-top:8px; }
+.intro { color:var(--muted);line-height:1.7; }
+.steps,.missions { display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:20px; }
+.card {
+  background:#07111d;border:1px solid var(--border);
+  border-radius:11px;padding:16px;margin-bottom:13px;
 }
-
+.card h3 { margin-top:0; }
+.card p,.card li { color:#c6d4e5;line-height:1.7; }
+.card ul { padding-left:20px; }
+.mission-img {
+  width:100%;height:210px;object-fit:cover;
+  border-radius:8px;margin-bottom:12px;
+  border:1px solid var(--border);
+}
+.dax { border-top:3px solid var(--blue); }
+.vincent { border-top:3px solid #d1a64b; }
+.advanced .subtitle { color:#ad81ff; }
+.advanced .card { border-top:2px solid var(--purple); }
+.button {
+  display:inline-block;background:var(--blue);color:white;
+  text-decoration:none;padding:12px 15px;border-radius:8px;
+  font-weight:bold;margin-top:10px;
+}
+.button.purple { background:var(--purple); }
+.tip {
+  background:#0a1b2c;border:1px dashed #355270;
+  padding:15px;border-radius:10px;color:var(--muted);
+  line-height:1.6;margin-top:18px;
+}
 footer {
-  border-top: 1px solid #242a36;
-  padding-top: 20px;
-  margin-top: 30px;
-  text-align: center;
-  color: #747d8d;
-  font-size: 12px;
+  border-top:1px solid var(--border);text-align:center;
+  padding:30px 15px;color:var(--muted);line-height:2;
 }
-
-@media (max-width: 750px) {
-  .tarifs {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .logo {
-    font-size: 29px;
-  }
+.hidden { display:none!important; }
+@media(max-width:950px) {
+  .columns { grid-template-columns:1fr; }
 }
-
-@media (max-width: 450px) {
-  .tarifs {
-    grid-template-columns: 1fr;
-  }
-  .card {
-    padding: 24px;
-  }
+@media(max-width:600px) {
+  header { position:relative; }
+  .steps,.missions { grid-template-columns:1fr; }
+  .search { width:100%; }
+  .hero { padding:45px 22px; }
+  .panel { padding:15px; }
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <div class="logo">VUNTRIA <span>GTA</span></div>
-  <p class="subtitle">Ton espace dédié à GTA 5</p>
-  <div class="badge">💜 TARIFS GTA 5 💜</div>
+  <div class="logo">VUNTRIA <span>GTA ONLINE</span></div>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#debutant">Débutant</a>
+    <a href="#dax">Dax</a>
+    <a href="#vincent">Vincent</a>
+    <a href="#cayo">Cayo</a>
+    <a href="#complexe">Fin du monde</a>
+  </nav>
+  <a class="discord" href="https://discord.gg/uXvv5NTmRF" target="_blank">💬 Discord</a>
+  <input class="search" id="search" placeholder="🔎 Rechercher une méthode...">
 </header>
 
+<section class="hero" id="accueil">
+  <span class="badge">GUIDE GTA ONLINE • FRANÇAIS</span>
+  <h1>DU DÉBUTANT<br>AU <span>PRO !</span></h1>
+  <p>
+    Bienvenue sur le guide Vuntria GTA Online !
+    Découvre les meilleures méthodes pour progresser,
+    gagner de l'argent et préparer tes braquages.
+  </p>
+  <a class="discord" href="https://discord.gg/uXvv5NTmRF" target="_blank">
+    Rejoindre le Discord
+  </a>
+</section>
+
 <main class="container">
+<div class="columns">
 
-  <section class="intro">
-    <h1>Nos tarifs <span>GTA 5</span></h1>
-    <p>Consulte les différentes offres et leurs prix en euros.</p>
-  </section>
+<section class="panel searchable" id="debutant">
+  <h2>♙ Guide débutant</h2>
+  <div class="subtitle">NIVEAUX 1 À 50</div>
+  <p class="intro">
+    Commence avec les missions accessibles, gagne tes premiers GTA$
+    et améliore ton personnage sans dépenser inutilement.
+  </p>
 
-  <section class="tarifs">
-
+  <div class="steps">
     <article class="card">
-      <div class="icon">💵</div>
-      <div class="amount">5 000 000 $</div>
-      <div class="price">2,00 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
-    </article>
-
-    <article class="card">
-      <div class="icon">💵</div>
-      <div class="amount">10 000 000 $</div>
-      <div class="price">3,00 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
+      <h3>✅ 1. Bien commencer</h3>
+      <ul>
+        <li>Termine le tutoriel</li>
+        <li>Récupère tes récompenses</li>
+        <li>Apprends à utiliser la carte</li>
+        <li>Garde ton argent au début</li>
+      </ul>
     </article>
 
     <article class="card">
-      <div class="icon">💰</div>
-      <div class="amount">20 000 000 $</div>
-      <div class="price">4,50 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
+      <h3>💰 2. Gagner de l'argent</h3>
+      <ul>
+        <li>Fais des missions de contact</li>
+        <li>Enchaîne les missions Dax</li>
+        <li>Essaie les missions de Vincent</li>
+        <li>Profite des bonus hebdomadaires</li>
+      </ul>
     </article>
 
     <article class="card">
-      <div class="icon">💰</div>
-      <div class="amount">40 000 000 $</div>
-      <div class="price">6,75 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
-    </article>
-
-    <article class="card popular">
-      <div class="icon">⭐</div>
-      <div class="amount">80 000 000 $</div>
-      <div class="price">10,12 <small>€</small></div>
-      <p class="description">Offre populaire</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
+      <h3>⭐ 3. Monter en niveau</h3>
+      <ul>
+        <li>Joue régulièrement</li>
+        <li>Profite des bonus RP</li>
+        <li>Joue avec des amis</li>
+        <li>Évite les achats trop chers</li>
+      </ul>
     </article>
 
     <article class="card">
-      <div class="icon">💎</div>
-      <div class="amount">160 000 000 $</div>
-      <div class="price">15,18 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
+      <h3>🚗 4. Préparer la suite</h3>
+      <ul>
+        <li>Économise pour un business</li>
+        <li>Améliore tes armes essentielles</li>
+        <li>Achète un véhicule pratique</li>
+        <li>Prépare les gros braquages</li>
+      </ul>
     </article>
-
-    <article class="card">
-      <div class="icon">💎</div>
-      <div class="amount">320 000 000 $</div>
-      <div class="price">22,76 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
-    </article>
-
-    <article class="card">
-      <div class="icon">👑</div>
-      <div class="amount">640 000 000 $</div>
-      <div class="price">34,14 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
-    </article>
-
-    <article class="card">
-      <div class="icon">👑</div>
-      <div class="amount">1 280 000 000 $</div>
-      <div class="price">51,22 <small>€</small></div>
-      <p class="description">Offre GTA 5</p>
-      <a class="order-button" href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">Nous contacter →</a>
-    </article>
-
-  </section>
-
-  <section class="discord">
-    <h2>🎮 Rejoins la communauté Vuntria</h2>
-    <p>Une question sur les offres ou besoin d'informations ? Retrouve-nous sur Discord.</p>
-    <a href="https://discord.gg/uXvv5NTmRF" target="_blank" rel="noopener noreferrer">
-      💬 Rejoindre notre Discord
-    </a>
-  </section>
-
-  <div class="info">
-    Les prix sont affichés en euros.<br>
-    Vérifie les modalités et les conditions avant toute transaction.<br>
-    Vuntria GTA est un site communautaire indépendant, non affilié à Rockstar Games.
   </div>
 
+  <div class="missions">
+    <article class="card dax searchable" id="dax">
+      <img class="mission-img" src="dax.jpg" alt="Dax"
+      onerror="this.style.display='none'">
+      <h3>🔥 Dax — Missions</h3>
+      <p>
+        Les missions de Dax sont une bonne option pour les débutants.
+        Elles permettent de découvrir des activités et de gagner
+        des GTA$ et des RP.
+      </p>
+      <ul>
+        <li>Débloque les missions de Dax</li>
+        <li>Suis les objectifs indiqués</li>
+        <li>Termine les missions une par une</li>
+        <li>Découvre les missions de Fooliganz</li>
+      </ul>
+      <a class="button" href="https://www.rockstargames.com/gta-online" target="_blank">
+        Guide officiel ↗
+      </a>
+    </article>
+
+    <article class="card vincent searchable" id="vincent">
+      <img class="mission-img" src="vincent.jpg" alt="Vincent"
+      onerror="this.style.display='none'">
+      <h3>🚔 Vincent — Missions</h3>
+      <p>
+        Les missions de Vincent proposent des objectifs variés
+        et permettent de découvrir les activités liées à la police.
+      </p>
+      <ul>
+        <li>Repère les missions disponibles</li>
+        <li>Lis les objectifs avant de partir</li>
+        <li>Prépare tes armes et ton véhicule</li>
+        <li>Joue en équipe si nécessaire</li>
+      </ul>
+      <a class="button" href="https://www.rockstargames.com/gta-online" target="_blank">
+        Guide officiel ↗
+      </a>
+    </article>
+  </div>
+
+  <div class="tip">
+    <strong>Conseil débutant :</strong>
+    économise ton argent, profite des activités bonus
+    et vérifie les conditions affichées en jeu.
+  </div>
+</section>
+
+<section class="panel advanced searchable">
+  <h2>♛ Guide avancé</h2>
+  <div class="subtitle">NIVEAU 51 OU PLUS</div>
+  <p class="intro">
+    Prépare ton équipement, économise tes GTA$ et choisis
+    un braquage adapté à ton budget et à ton style de jeu.
+  </p>
+
+  <article class="card searchable" id="cayo">
+    <span class="badge">SOLO OU EN ÉQUIPE</span>
+    <h3>🌊 Cayo Perico — Kosatka</h3>
+    <p>
+      Un braquage sur une île avec repérage, préparations
+      et finale. Il peut être effectué en solo ou avec d'autres joueurs.
+    </p>
+    <ul>
+      <li>Économise pour acheter le Kosatka</li>
+      <li>Commence par le repérage de l'île</li>
+      <li>Prépare l'équipement nécessaire</li>
+      <li>Choisis ton itinéraire d'infiltration</li>
+      <li>Prépare ta sortie avant la finale</li>
+    </ul>
+    <a class="button purple" href="https://www.rockstargames.com/gta-online" target="_blank">
+      Guide Cayo Perico ↗
+    </a>
+  </article>
+
+  <article class="card searchable" id="complexe">
+    <span class="badge">COOPÉRATION RECOMMANDÉE</span>
+    <h3>🏢 Fin du monde — Complexe</h3>
+    <p>
+      Le braquage de la Fin du monde se déroule en plusieurs actes.
+      Il demande de la préparation et une bonne coordination.
+    </p>
+    <ul>
+      <li>Achète un Complexe pour lancer les actes</li>
+      <li>Prépare tes armes, munitions et protections</li>
+      <li>Forme une équipe et répartis les rôles</li>
+      <li>Comprends les objectifs de chaque mission</li>
+      <li>Coordonne-toi avec tes coéquipiers</li>
+    </ul>
+    <a class="button purple" href="https://www.rockstargames.com/gta-online" target="_blank">
+      Guide Fin du monde ↗
+    </a>
+  </article>
+
+  <div class="tip">
+    <strong>Conseil avancé :</strong>
+    le niveau seul ne suffit pas. Le budget, l'équipement,
+    l'expérience et le nombre de joueurs comptent aussi.
+  </div>
+</section>
+
+</div>
+<p id="noResults" style="display:none;color:#ffb6bd">
+  Aucune méthode trouvée. Essaie un autre mot-clé.
+</p>
 </main>
 
 <footer>
-  © <span id="year"></span> Vuntria GTA — Tous droits réservés.
+  <strong>VUNTRIA</strong> • Guide communautaire non officiel GTA Online
+  <br>
+  <a class="discord" href="https://discord.gg/uXvv5NTmRF" target="_blank">
+    💬 Rejoindre le serveur Discord Vuntria
+  </a>
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+const search = document.getElementById('search');
+const items = [...document.querySelectorAll('.searchable')];
+const noResults = document.getElementById('noResults');
 
+search.addEventListener('input', () => {
+  const q = search.value.trim().toLocaleLowerCase('fr');
+  let count = 0;
+
+  items.forEach(el => {
+    const match = !q ||
+      el.innerText.toLocaleLowerCase('fr').includes(q);
+
+    el.classList.toggle('hidden', !match);
+
+    if (match && el.matches('.card')) count++;
+  });
+
+  noResults.style.display =
+    q && count === 0 ? 'block' : 'none';
+});
+</script>
 </body>
 </html>
